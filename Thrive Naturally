@@ -1,3 +1,23 @@
 cd ~/your-dev-folder/
 git clone https://github.com/YOUR_USERNAME/thrive-naturally.git
 cd thrive-naturally
+npx create-next-app@latest . --ts
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+git add .
+git commit -m "Initial commit: Next.js + Tailwind base for Thrive Naturally"
+git push origin main
